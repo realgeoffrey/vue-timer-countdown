@@ -18,7 +18,7 @@ Vue的倒计时组件
     <script src="//unpkg.com/vue-timer-countdown"></script>
     ```
 
-### 注册指令
+### 注册组件
 1. 全局注册
 
     1. node
@@ -38,7 +38,7 @@ Vue的倒计时组件
 
         <script>
         // 全局注册
-        Vue.use(vueTimerCountdown, { component: 'timer-countdown' }) // 组件名默认是：timer-countdown
+        Vue.use(vueTimerCountdown.default, { component: 'timer-countdown' }) // 组件名默认是：timer-countdown
         </script>
         ```
 2. 局部注册
@@ -46,12 +46,12 @@ Vue的倒计时组件
     1. node
 
         ```javascript
-        import vueTimerCountdown from 'vue-timer-countdown'
+        import { vueTimerCountdown } from 'vue-timer-countdown'
 
         export default {
           components: {
             // 局部注册
-            TimerCountdown: vueTimerCountdown.component
+            TimerCountdown: vueTimerCountdown
           }
         }
         ```
@@ -65,7 +65,7 @@ Vue的倒计时组件
         new Vue({
           components: {
             // 局部注册
-            'timer-countdown': vueTimerCountdown.component
+            'timer-countdown': vueTimerCountdown.vueTimerCountdown
           }
         })
         </script>

@@ -30,12 +30,12 @@
 
   <script>
   // 全局注册
-  // Vue.use(vueTimerCountdown, { component: 'timer-countdown' })
+  // Vue.use(vueTimerCountdown.default, { component: 'timer-countdown' })
 
   new Vue({
     components: {
       // 局部注册
-      'timer-countdown': vueTimerCountdown.component
+      'timer-countdown': vueTimerCountdown.vueTimerCountdown
     },
     el: '#app',
     data () {
