@@ -6,23 +6,23 @@
 </head>
 <body>
   <div id="app">
-    <TimerCountdown
+    <timer-countdown
       :deadline="timeLeft"
       @done="done"
       :complete-zero="false"
       :left-second="2"
       :ignore-day="false"
-    ></TimerCountdown>
+    ></timer-countdown>
 
     <br>
 
-    <TimerCountdown
+    <timer-countdown
       :deadline="Date.now() + 5000"
       @done="done"
       v-slot="time"
     >
       {{ time.day }}天{{ time.hour }}时{{ time.minute }}分{{ time.second }}秒
-    </TimerCountdown>
+    </timer-countdown>
   </div>
 
   <script src="//unpkg.com/vue"></script>
@@ -30,12 +30,12 @@
 
   <script>
   // 全局注册
-  // Vue.use(vueTimerCountdown, { component: 'TimerCountdown' })
+  // Vue.use(vueTimerCountdown, { component: 'timer-countdown' })
 
   new Vue({
     components: {
       // 局部注册
-      TimerCountdown: vueTimerCountdown.component
+      'timer-countdown': vueTimerCountdown.component
     },
     el: '#app',
     data () {
