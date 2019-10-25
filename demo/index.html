@@ -2,40 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>demo for vue-countdowntimer</title>
+  <title>demo for vue-timer-countdown</title>
 </head>
 <body>
   <div id="app">
-<Countdowntimer
-  :deadline="timeLeft"
-  @done="done"
-  :complete-zero="false"
-  :left-second="2"
-  :ignore-day="false"
-></Countdowntimer>
+    <TimerCountdown
+      :deadline="timeLeft"
+      @done="done"
+      :complete-zero="false"
+      :left-second="2"
+      :ignore-day="false"
+    ></TimerCountdown>
 
     <br>
 
-    <Countdowntimer
+    <TimerCountdown
       :deadline="Date.now() + 5000"
       @done="done"
       v-slot="time"
     >
       {{ time.day }}天{{ time.hour }}时{{ time.minute }}分{{ time.second }}秒
-    </Countdowntimer>
+    </TimerCountdown>
   </div>
 
   <script src="//unpkg.com/vue"></script>
-  <script src="//unpkg.com/vue-countdowntimer"></script>
+  <script src="//unpkg.com/vue-timer-countdown"></script>
 
   <script>
   // 全局注册
-  // Vue.use(vueCountdowntimer, { component: 'Countdowntimer' })
+  // Vue.use(vueTimerCountdown, { component: 'TimerCountdown' })
 
   new Vue({
     components: {
       // 局部注册
-      Countdowntimer: vueCountdowntimer.component
+      TimerCountdown: vueTimerCountdown.component
     },
     el: '#app',
     data () {

@@ -1,11 +1,11 @@
-import vueCountdowntimer from './vue-countdowntimer.vue'
+import vueTimerCountdown from './vue-timer-countdown.vue'
 
 export default {
   // 全局注册
   install (Vue, options = {}) {
-    Vue.component(options.component || 'Countdowntimer', vueCountdowntimer)
+    Vue.component(options.component || 'TimerCountdown', vueTimerCountdown)
   },
 
   // 局部注册
-  component: vueCountdowntimer
+  component: vueTimerCountdown
 }

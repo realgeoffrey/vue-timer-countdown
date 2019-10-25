@@ -1,21 +1,21 @@
-# vue-countdowntimer
+# vue-timer-countdown
 
 Vue的倒计时组件
 
-1. npm：<https://www.npmjs.com/package/vue-countdowntimer>
-2. demo：<https://realgeoffrey.github.io/vue-countdowntimer/demo/index.html>
+1. npm：<https://www.npmjs.com/package/vue-timer-countdown>
+2. demo：<https://realgeoffrey.github.io/vue-timer-countdown/demo/index.html>
 
 ### 安装
 1. node安装
 
     ```bash
-    npm install vue-countdowntimer --save
+    npm install vue-timer-countdown --save
     ```
 2. 浏览器引用
 
     ```html
     <!-- 需要先引入vue：<script src="//unpkg.com/vue"></script> -->
-    <script src="//unpkg.com/vue-countdowntimer"></script>
+    <script src="//unpkg.com/vue-timer-countdown"></script>
     ```
 
 ### 注册指令
@@ -25,20 +25,20 @@ Vue的倒计时组件
 
         ```javascript
         import Vue from 'vue'
-        import vueCountdowntimer from 'vue-countdowntimer'
+        import vueTimerCountdown from 'vue-timer-countdown'
 
         // 全局注册
-        Vue.use(vueCountdowntimer, { component: 'Countdowntimer' }) // 组件名默认是：Countdowntimer
+        Vue.use(vueTimerCountdown, { component: 'TimerCountdown' }) // 组件名默认是：TimerCountdown
         ```
     2. 浏览器
 
         ```html
         <!-- 需要先引入vue：<script src="//unpkg.com/vue"></script> -->
-        <!-- 需要先引入vue-countdowntimer：<script src="//unpkg.com/vue-countdowntimer"></script> -->
+        <!-- 需要先引入vue-timer-countdown：<script src="//unpkg.com/vue-timer-countdown"></script> -->
 
         <script>
         // 全局注册
-        Vue.use(vueCountdowntimer, { component: 'Countdowntimer' }) // 组件名默认是：Countdowntimer
+        Vue.use(vueTimerCountdown, { component: 'TimerCountdown' }) // 组件名默认是：TimerCountdown
         </script>
         ```
 2. 局部注册
@@ -46,12 +46,12 @@ Vue的倒计时组件
     1. node
 
         ```javascript
-        import vueCountdowntimer from 'vue-countdowntimer'
+        import vueTimerCountdown from 'vue-timer-countdown'
 
         export default {
           components: {
             // 局部注册
-            Countdowntimer: vueCountdowntimer.component
+            TimerCountdown: vueTimerCountdown.component
           }
         }
         ```
@@ -59,13 +59,13 @@ Vue的倒计时组件
 
         ```html
         <!-- 需要先引入vue：<script src="//unpkg.com/vue"></script> -->
-        <!-- 需要先引入vue-countdowntimer：<script src="//unpkg.com/vue-countdowntimer"></script> -->
+        <!-- 需要先引入vue-timer-countdown：<script src="//unpkg.com/vue-timer-countdown"></script> -->
 
         <script>
         new Vue({
           components: {
             // 局部注册
-            Countdowntimer: vueCountdowntimer.component
+            TimerCountdown: vueTimerCountdown.component
           }
         })
         </script>
@@ -75,7 +75,7 @@ Vue的倒计时组件
 1. 参数
 
     ```vue
-    <Countdowntimer
+    <TimerCountdown
       :deadline="倒计时时间戳"
       :complete-zero="补全0（true）"
       :left-second="提前到期-秒（0）"
@@ -86,7 +86,7 @@ Vue的倒计时组件
 2. 插槽
 
     ```vue
-    <Countdowntimer
+    <TimerCountdown
       :deadline="倒计时时间戳"
       v-slot="time"
     >
@@ -94,5 +94,5 @@ Vue的倒计时组件
       {{ time.hour }}时
       {{ time.minute }}分
       {{ time.second }}秒
-    </Countdowntimer>
+    </TimerCountdown>
     ```
