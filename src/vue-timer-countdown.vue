@@ -64,6 +64,7 @@ export default {
   },
   mounted () {
     this.render()
+
     this.setIntervalInstance = new SET_INTERVAL(() => {
       const restTime = this.getRestTime()
 
