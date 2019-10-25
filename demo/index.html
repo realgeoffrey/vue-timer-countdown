@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo for vue-countdowntimer</title>
+</head>
+<body>
+  <div id="app">
+<Countdowntimer
+  :deadline="timeLeft"
+  @done="done"
+  :complete-zero="false"
+  :left-second="2"
+  :ignore-day="false"
+></Countdowntimer>
+
+    <br>
+
+    <Countdowntimer
+      :deadline="Date.now() + 5000"
+      @done="done"
+      v-slot="time"
+    >
+      {{ time.day }}天{{ time.hour }}时{{ time.minute }}分{{ time.second }}秒
+    </Countdowntimer>
+  </div>
+
+  <script src="//unpkg.com/vue"></script>
+  <script src="//unpkg.com/vue-countdowntimer"></script>
+
+  <script>
+  // 全局注册
+  // Vue.use(vueCountdowntimer, { component: 'Countdowntimer' })
+
+  new Vue({
+    components: {
+      // 局部注册
+      Countdowntimer: vueCountdowntimer.component
+    },
+    el: '#app',
+    data () {
+      return {
+        timeLeft: Date.now() + 5000
+      }
+    },
+    methods: {
+      done () {
+        console.log('done')
+      }
+    }
+  })
+  </script>
+</body>
+</html>
