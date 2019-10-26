@@ -35,7 +35,7 @@ const SET_INTERVAL = function (func, millisecond) {
 
 export default {
   props: {
-    deadline: { // 时间戳
+    deadline: { // 倒计时剩余时间（秒）
       type: Number,
       required: true
     },
@@ -59,31 +59,44 @@ export default {
       minute: 0,
       second: 0,
 
-      setIntervalInstance: null
+      // 每秒执行（实例）
+      setIntervalInstance: { stop () {} }
     }
   },
-  mounted () {
-    this.render()
+  computed: {
+    deadlineTimestamp () {  // 倒计时剩余时间的时间戳
+      return Date.now() + this.deadline * 1000
+    }
+  },
+  watch: {
+    deadline: {
+      handler (val) {
+        this.render()
 
-    this.setIntervalInstance = new SET_INTERVAL(() => {
-      const restTime = this.getRestTime()
+        if (this.getRestTime(val) > this.leftSecond) {
+          this.setIntervalInstance.stop()
 
-      if (restTime < (this.leftSecond || 0)) {
-        this.setIntervalInstance.stop()
-        this.$emit('done')
+          this.setIntervalInstance = new SET_INTERVAL(() => {
+            this.render()
 
-        return
-      }
-
-      this.render()
-    }, 1000)
+            if (this.getRestTime() <= this.leftSecond) {
+              this.setIntervalInstance.stop()
+              this.$emit('done')
+            }
+          }, 1000)
+        } else {
+          this.$emit('done')
+        }
+      },
+      immediate: true
+    }
   },
   beforeDestroy () {
     this.setIntervalInstance.stop()
   },
   methods: {
     render () {
-      const restTime = this.getRestTime(this.deadline)
+      const restTime = this.getRestTime()
 
       if (this.ignoreDay) {
         this.hour = FORMAT_NUMBER(Math.floor(restTime / (60 * 60)), this.completeZero)
@@ -94,8 +107,8 @@ export default {
       this.minute = FORMAT_NUMBER(Math.floor((restTime / 60) % 60), this.completeZero)
       this.second = FORMAT_NUMBER(restTime % 60, this.completeZero)
     },
-    getRestTime () {  // 获取剩余时间
-      return Math.round((this.deadline - Date.now()) / 1000)
+    getRestTime () {  // 获取剩余时间（秒）
+      return Math.max(Math.round((this.deadlineTimestamp - Date.now()) / 1000), 0)
     }
   }
 }

@@ -17,7 +17,7 @@
     <br>
 
     <timer-countdown
-      :deadline="Date.now() + 5000"
+      :deadline="5"
       @done="done"
       v-slot="time"
     >
@@ -41,7 +41,7 @@
     el: '#app',
     data () {
       return {
-        timeLeft: Date.now() + 5000
+        timeLeft: 5
       }
     },
     methods: {

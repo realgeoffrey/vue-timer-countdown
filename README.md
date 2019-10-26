@@ -85,7 +85,7 @@ Vue的倒计时组件
 
     ```vue
     <TimerCountdown
-      :deadline="倒计时时间戳"
+      :deadline="倒计时剩余时间-秒（必填）"
       :complete-zero="补全0（true）"
       :left-second="提前到期-秒（0）"
       :ignore-day="true：展示到小时；false：展示到天（true）"
@@ -96,7 +96,7 @@ Vue的倒计时组件
 
     ```vue
     <TimerCountdown
-      :deadline="倒计时时间戳"
+      :deadline="倒计时剩余时间-秒（必填）"
       v-slot="time"
     >
       {{ time.day }}天
