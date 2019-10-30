@@ -111,7 +111,9 @@ export default {
         day: this.day,
         hour: this.hour,
         minute: this.minute,
-        second: this.second
+        second: this.second,
+
+        restSecond: restTime  // 剩余时间（秒）
       })
     },
     getRestTime () {  // 获取剩余时间（秒）
