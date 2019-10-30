@@ -92,6 +92,7 @@ Vue的倒计时组件
       :left-second="提前到期-秒（0）"
       :ignore-day="true：展示到小时；false：展示到天（true）"
       @done="倒计时结束后回调的方法"
+      @render="每秒渲染结束后回调的方法，带参数{ day, hour, minute, second }"
     />
     ```
 2. 插槽

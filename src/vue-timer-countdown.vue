@@ -106,6 +106,13 @@ export default {
       }
       this.minute = FORMAT_NUMBER(Math.floor((restTime / 60) % 60), this.completeZero)
       this.second = FORMAT_NUMBER(restTime % 60, this.completeZero)
+
+      this.$emit('render', {
+        day: this.day,
+        hour: this.hour,
+        minute: this.minute,
+        second: this.second
+      })
     },
     getRestTime () {  // 获取剩余时间（秒）
       return Math.max(Math.round((this.deadlineTimestamp - Date.now()) / 1000), 0)
