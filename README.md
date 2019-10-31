@@ -35,7 +35,7 @@ Vue的倒计时组件
 
         ```javascript
         import Vue from 'vue'
-        import { vueTimerCountdown } from 'vue-timer-countdown'
+        import vueTimerCountdown from 'vue-timer-countdown'
 
         // 全局注册
         Vue.component('TimerCountdown', vueTimerCountdown)
@@ -43,7 +43,7 @@ Vue的倒计时组件
     2. 局部注册
 
         ```javascript
-        import { vueTimerCountdown } from 'vue-timer-countdown'
+        import vueTimerCountdown from 'vue-timer-countdown'
 
         export default {
           components: {
