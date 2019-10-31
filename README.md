@@ -62,8 +62,8 @@ Vue的倒计时组件
 
         <script>
         // 全局注册（组件名默认是：timer-countdown）
-        Vue.use(vueTimerCountdown.default, { component: 'timer-countdown' })
-        // 或：Vue.component('timer-countdown', vueTimerCountdown.vueTimerCountdown)
+        Vue.use(vueTimerCountdown, { component: 'timer-countdown' })
+        // 或：Vue.component('timer-countdown', vueTimerCountdown)
         </script>
         ```
     2. 局部注册
@@ -76,7 +76,7 @@ Vue的倒计时组件
         new Vue({
           components: {
             // 局部注册
-            'timer-countdown': vueTimerCountdown.vueTimerCountdown
+            'timer-countdown': vueTimerCountdown
           }
         })
         </script>

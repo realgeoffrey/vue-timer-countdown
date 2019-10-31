@@ -81,11 +81,15 @@ export default {
 
             if (this.getRestTime() <= this.leftSecond) {
               this.setIntervalInstance.stop()
-              this.$emit('done')
+              this.$nextTick(() => {
+                this.$emit('done')
+              })
             }
           }, 1000)
         } else {
-          this.$emit('done')
+          this.$nextTick(() => {
+            this.$emit('done')
+          })
         }
       },
       immediate: true
@@ -107,13 +111,15 @@ export default {
       this.minute = FORMAT_NUMBER(Math.floor((restTime / 60) % 60), this.completeZero)
       this.second = FORMAT_NUMBER(restTime % 60, this.completeZero)
 
-      this.$emit('render', {
-        day: this.day,
-        hour: this.hour,
-        minute: this.minute,
-        second: this.second,
+      this.$nextTick(() => {
+        this.$emit('render', {
+          day: this.day,
+          hour: this.hour,
+          minute: this.minute,
+          second: this.second,
 
-        restSecond: restTime  // 剩余时间（秒）
+          restSecond: restTime  // 剩余时间（秒）
+        })
       })
     },
     getRestTime () {  // 获取剩余时间（秒）

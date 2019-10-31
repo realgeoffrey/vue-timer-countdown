@@ -9,6 +9,7 @@
     <timer-countdown
       :deadline="timeLeft"
       @done="done"
+      @render="render"
       :complete-zero="false"
       :left-second="2"
       :ignore-day="false"
@@ -30,13 +31,14 @@
 
   <script>
   // 全局注册
-  // Vue.use(vueTimerCountdown.default, { component: 'timer-countdown' })
-  // 或：Vue.component('timer-countdown', vueTimerCountdown.vueTimerCountdown)
+  // Vue.use(vueTimerCountdown, { component: 'timer-countdown' })
+  // 或：
+  // Vue.component('timer-countdown', vueTimerCountdown)
 
   new Vue({
     components: {
       // 局部注册
-      'timer-countdown': vueTimerCountdown.vueTimerCountdown
+      'timer-countdown': vueTimerCountdown
     },
     el: '#app',
     data () {
@@ -47,6 +49,9 @@
     methods: {
       done () {
         console.log('done')
+      },
+      render (data) {
+        console.log('render', data)
       }
     }
   })
