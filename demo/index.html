@@ -9,7 +9,7 @@
     <timer-countdown
       :deadline="timeLeft"
       @done="done"
-      @render="render"
+      @update="update"
       :complete-zero="false"
       :left-second="2"
       :ignore-day="false"
@@ -27,7 +27,8 @@
   </div>
 
   <script src="//unpkg.com/vue"></script>
-  <script src="//unpkg.com/vue-timer-countdown"></script>
+<!--  <script src="//unpkg.com/vue-timer-countdown"></script>-->
+  <script src="/dist/vue-timer-countdown.iife.js"></script>
 
   <script>
   // 全局注册
@@ -50,8 +51,8 @@
       done () {
         console.log('done')
       },
-      render (data) {
-        console.log('render', data)
+      update (data) {
+        console.log('update', data)
       }
     }
   })

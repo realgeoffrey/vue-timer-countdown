@@ -112,7 +112,7 @@ export default {
       this.second = FORMAT_NUMBER(restTime % 60, this.completeZero)
 
       this.$nextTick(() => {
-        this.$emit('render', {
+        this.$emit('update', {
           day: this.day,
           hour: this.hour,
           minute: this.minute,
