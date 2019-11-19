@@ -60,7 +60,7 @@ export default {
       second: 0,
 
       // 每秒执行（实例）
-      setIntervalInstance: { stop () {} }
+      setIntervalInstance: Object.freeze({ stop: () => {} })
     }
   },
   computed: {
