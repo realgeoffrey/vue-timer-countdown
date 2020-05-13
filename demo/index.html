@@ -6,15 +6,8 @@
 </head>
 <body>
   <div id="app">
-    <timer-countdown
-      :deadline="timeLeft"
-      @done="done"
-      @update="update"
-      :complete-zero="false"
-      :left-second="2"
-      :ignore-day="false"
-    ></timer-countdown>
-
+    支持所有方式传入deadline数据（数字、变量、vuex的值、等）
+    <br>
     <br>
 
     <timer-countdown
@@ -24,6 +17,28 @@
     >
       {{ time.day }}天{{ time.hour }}时{{ time.minute }}分{{ time.second }}秒
     </timer-countdown>
+
+    <br>
+    <br>
+
+    <timer-countdown
+      :deadline="timeleft"
+      @done="done"
+      @update="update"
+      :complete-zero="false"
+      :left-second="2"
+      :ignore-day="false"
+    ></timer-countdown>
+
+    <br>
+
+    <input type="number" v-model.number="timeleft">
+    <br>
+    任何时候（包括已经结束后触发`done`之后），修改`deadline`都可以让组件重新启动。
+
+    <br>
+    <br>
+    打开控制台瞧瞧吧~
   </div>
 
   <script src="//unpkg.com/vue"></script>
@@ -44,7 +59,7 @@
     el: '#app',
     data () {
       return {
-        timeLeft: 5
+        timeleft: 5
       }
     },
     methods: {
