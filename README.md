@@ -86,6 +86,8 @@ Vue的倒计时组件
       @update="每秒渲染结束后回调的方法，带参数{ day, hour, minute, second, restSecond }（展示的天、小时、分钟、秒，总共剩余的秒）"
     />
     ```
+
+    >任何时候（包括已经结束后触发`done`之后），修改`deadline`都可以让组件重新启动。
 2. 插槽
 
     ```vue
