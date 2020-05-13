@@ -22,7 +22,7 @@
     <br>
 
     <timer-countdown
-      :deadline="timeleft"
+      :deadline="timeLeft"
       @done="done"
       @update="update"
       :complete-zero="false"
@@ -32,7 +32,7 @@
 
     <br>
 
-    <input type="number" v-model.number="timeleft">
+    <input type="number" v-model.number="timeLeft">
     <br>
     任何时候（包括已经结束后触发`done`之后），修改`deadline`都可以让组件重新启动。
 
@@ -59,7 +59,7 @@
     el: '#app',
     data () {
       return {
-        timeleft: 5
+        timeLeft: 5
       }
     },
     methods: {
