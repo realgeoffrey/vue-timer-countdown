@@ -70,10 +70,10 @@ export default {
   },
   watch: {
     deadline: {
-      handler (val) {
+      handler () {
         this.render()
 
-        if (this.getRestTime(val) > this.leftSecond) {
+        if (this.getRestTime() > this.leftSecond) {
           this.setIntervalInstance.stop()
 
           this.setIntervalInstance = new SET_INTERVAL(() => {
