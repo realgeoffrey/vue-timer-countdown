@@ -1,6 +1,6 @@
 # vue-timer-countdown
 
-Vue的倒计时组件
+Vue@2的倒计时组件
 
 1. npm：<https://www.npmjs.com/package/vue-timer-countdown>
 2. demo：<https://realgeoffrey.github.io/vue-timer-countdown/demo/index.html>
@@ -14,7 +14,7 @@ Vue的倒计时组件
 2. 浏览器引用
 
     ```html
-    <!-- 需要先引入vue：<script src="//unpkg.com/vue"></script> -->
+    <!-- 需要先引入vue：<script src="//unpkg.com/vue@2"></script> -->
     <script src="//unpkg.com/vue-timer-countdown"></script>
     ```
 
@@ -48,7 +48,7 @@ Vue的倒计时组件
     1. 全局注册
 
         ```html
-        <!-- 需要先引入vue：<script src="//unpkg.com/vue"></script> -->
+        <!-- 需要先引入vue：<script src="//unpkg.com/vue@2"></script> -->
         <!-- 需要先引入vue-timer-countdown：<script src="//unpkg.com/vue-timer-countdown"></script> -->
 
         <script>
@@ -60,7 +60,7 @@ Vue的倒计时组件
     2. 局部注册
 
         ```html
-        <!-- 需要先引入vue：<script src="//unpkg.com/vue"></script> -->
+        <!-- 需要先引入vue：<script src="//unpkg.com/vue@2"></script> -->
         <!-- 需要先引入vue-timer-countdown：<script src="//unpkg.com/vue-timer-countdown"></script> -->
 
         <script>

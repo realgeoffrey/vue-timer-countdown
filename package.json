@@ -1,6 +1,6 @@
 {
   "name": "vue-timer-countdown",
-  "description": "倒计时（Vue组件）",
+  "description": "倒计时（Vue@2组件）",
   "repository": {
     "type": "git",
     "url": "git@github.com:realgeoffrey/vue-timer-countdown.git"
