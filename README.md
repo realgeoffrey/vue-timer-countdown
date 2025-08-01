@@ -1,9 +1,11 @@
 # vue-timer-countdown
 
+[![NPM Version](https://img.shields.io/npm/v/vue-timer-countdown)](https://www.npmjs.com/package/vue-timer-countdown)
+![Vue 2](https://img.shields.io/badge/Vue_2-42b883)
+
 Vue@2的倒计时组件
 
-1. npm：<https://www.npmjs.com/package/vue-timer-countdown>
-2. demo：<https://realgeoffrey.github.io/vue-timer-countdown/demo/index.html>
+demo：<https://realgeoffrey.github.io/vue-timer-countdown/demo/index.html>
 
 ### 安装
 1. Node.js安装
